@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dashboard Admin — Aii Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/logo.png" type="image/png" />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: ["Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () { sessionStorage.fonts = true; },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ================= SIDEBAR ================= -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="logo" class="navbar-brand" height="40" style="object-fit: contain;" />
+              <span class="text-white ms-2 fw-bold" style="font-size: 15px;">Aii Portfolio</span>
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+              <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+            </div>
+            <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+          </div>
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a href="index.html">
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/profile.html">
+                  <i class="fas fa-user"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/skills.html">
+                  <i class="fas fa-star"></i>
+                  <p>Skills</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/education.html">
+                  <i class="fas fa-graduation-cap"></i>
+                  <p>Education</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/experience.html">
+                  <i class="fas fa-briefcase"></i>
+                  <p>Experience</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/portfolio.html">
+                  <i class="fas fa-folder-open"></i>
+                  <p>Portfolio</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/messages.html">
+                  <i class="fas fa-envelope"></i>
+                  <p>Messages</p>
+                  <span class="badge badge-success">3</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/user.html">
+                  <i class="fas fa-users"></i>
+                  <p>Users</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/settings.html">
+                  <i class="fas fa-cog"></i>
+                  <p>Settings</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- =============== END SIDEBAR =============== -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="logo" class="navbar-brand" height="30" />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar"><i class="gg-menu-right"></i></button>
+                <button class="btn btn-toggle sidenav-toggler"><i class="gg-menu-left"></i></button>
+              </div>
+              <button class="topbar-toggler more"><i class="gg-more-vertical-alt"></i></button>
+            </div>
+          </div>
+
+          <!-- ================= NAVBAR HEADER ================= -->
+          <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+            <div class="container-fluid">
+              <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="fa fa-search search-icon"></i>
+                    </button>
+                  </div>
+                  <input type="text" placeholder="Cari sesuatu..." class="form-control" />
+                </div>
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <!-- Messages Dropdown -->
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                  <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+                    <li>
+                      <div class="dropdown-title d-flex justify-content-between align-items-center">
+                        Pesan Masuk
+                        <a href="pages/messages.html" class="small">Lihat semua</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="message-notif-scroll scrollbar-outer">
+                        <div class="notif-center">
+                          <a href="pages/messages.html">
+                            <div class="notif-img">
+                              <span class="avatar-title rounded-circle bg-primary">R</span>
+                            </div>
+                            <div class="notif-content">
+                              <span class="subject">Rina</span>
+                              <span class="block">Halo Aii, saya ingin melihat project portfolio kamu.</span>
+                              <span class="time">5 menit lalu</span>
+                            </div>
+                          </a>
+                          <a href="pages/messages.html">
+                            <div class="notif-img">
+                              <span class="avatar-title rounded-circle bg-info">F</span>
+                            </div>
+                            <div class="notif-content">
+                              <span class="subject">Fajar</span>
+                              <span class="block">Hai, apakah kamu menerima project desain?</span>
+                              <span class="time">12 menit lalu</span>
+                            </div>
+                          </a>
+                          <a href="pages/messages.html">
+                            <div class="notif-img">
+                              <span class="avatar-title rounded-circle bg-success">N</span>
+                            </div>
+                            <div class="notif-content">
+                              <span class="subject">Nadia</span>
+                              <span class="block">Website portfolio-nya bagus, boleh bertanya?</span>
+                              <span class="time">17 menit lalu</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="see-all" href="pages/messages.html">Lihat semua pesan<i class="fa fa-angle-right"></i></a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Notifications Dropdown -->
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i>
+                    <span class="notification">4</span>
+                  </a>
+                  <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                    <li>
+                      <div class="dropdown-title">Kamu punya 4 notifikasi baru</div>
+                    </li>
+                    <li>
+                      <div class="notif-scroll scrollbar-outer">
+                        <div class="notif-center">
+                          <a href="#">
+                            <div class="notif-icon notif-primary"><i class="fa fa-folder-plus"></i></div>
+                            <div class="notif-content">
+                              <span class="block">Portfolio diperbarui</span>
+                              <span class="time">Project baru telah ditambahkan.</span>
+                            </div>
+                          </a>
+                          <a href="#">
+                            <div class="notif-icon notif-success"><i class="fa fa-comment"></i></div>
+                            <div class="notif-content">
+                              <span class="block">Pesan baru</span>
+                              <span class="time">Kamu menerima pesan baru dari pengunjung.</span>
+                            </div>
+                          </a>
+                          <a href="#">
+                            <div class="notif-icon notif-warning"><i class="fa fa-user-edit"></i></div>
+                            <div class="notif-content">
+                              <span class="block">Profile updated</span>
+                              <span class="time">Informasi profile berhasil diperbarui.</span>
+                            </div>
+                          </a>
+                          <a href="#">
+                            <div class="notif-icon notif-danger"><i class="fa fa-check-circle"></i></div>
+                            <div class="notif-content">
+                              <span class="block">Project completed</span>
+                              <span class="time">Project berhasil ditandai sebagai selesai.</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="see-all" href="#">Lihat semua notifikasi<i class="fa fa-angle-right"></i></a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- User Dropdown -->
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <div class="avatar-sm">
+                      <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                    </div>
+                    <span class="profile-username">
+                      <span class="op-7">Hi,</span>
+                      <span class="fw-bold">Aii</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li>
+                        <div class="user-box">
+                          <div class="avatar-lg">
+                            <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                          </div>
+                          <div class="u-text">
+                            <h4>A. Aisyah Muthmainnah</h4>
+                            <p class="text-muted">aaisyahmuthmainnahbay@gmail.com</p>
+                            <a href="pages/profile.html" class="btn btn-xs btn-secondary btn-sm">Lihat Profile</a>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="pages/profile.html">My Profile</a>
+                        <a class="dropdown-item" href="pages/messages.html">Inbox</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="pages/settings.html">Account Setting</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../index.html">Logout</a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- =============== END NAVBAR =============== -->
+        </div>
+
+        <!-- ================= KONTEN DASHBOARD ================= -->
+        <div class="container">
+          <div class="page-inner">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h3 class="fw-bold mb-3">Dashboard</h3>
+                <h6 class="op-7 mb-2">Selamat datang di dashboard portfolio Aii</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="pages/portfolio.html" class="btn btn-label-info btn-round me-2">Kelola Portfolio</a>
+                <a href="../index.html" class="btn btn-primary btn-round">Lihat Website</a>
+              </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-primary bubble-shadow-small">
+                          <i class="fas fa-folder-open"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Total Project</p>
+                          <h4 class="card-title">7</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-info bubble-shadow-small">
+                          <i class="fas fa-star"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Total Skills</p>
+                          <h4 class="card-title">6</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
+                          <i class="fas fa-briefcase"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Total Experience</p>
+                          <h4 class="card-title">4</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                          <i class="fas fa-envelope"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Total Messages</p>
+                          <h4 class="card-title">0</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart + Ringkasan -->
+            <div class="row">
+              <div class="col-md-5">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Kategori Project</div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 300px">
+                      <canvas id="projectCategoryChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Ringkasan Portfolio</div>
+                      <div class="card-tools">
+                        <a href="pages/portfolio.html" class="btn btn-label-info btn-round btn-sm">Kelola</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table align-items-center mb-0">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Project</th>
+                            <th scope="col">Kategori</th>
+                            <th scope="col">Tahun</th>
+                            <th scope="col" class="text-end">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Aplikasi Data Nilai Mahasiswa</td>
+                            <td>Web Development</td>
+                            <td>2026</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Website Portfolio Pribadi</td>
+                            <td>Web Design</td>
+                            <td>2025</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Sistem Inventory Toko</td>
+                            <td>Web Development</td>
+                            <td>2025</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Ilustrasi Vektor Sampul Buku</td>
+                            <td>Digital Illustration</td>
+                            <td>2025</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Custom Vector Illustration</td>
+                            <td>Digital Illustration</td>
+                            <td>2024</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Potret Kucing Tidur</td>
+                            <td>Photography</td>
+                            <td>2020</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Kupu-Kupu di Atas Bunga</td>
+                            <td>Photography</td>
+                            <td>2021</td>
+                            <td class="text-end"><span class="badge badge-success">Selesai</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Lihat Website</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/settings.html"> Settings </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Bantuan </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              AISYAH MUTHMAINNAH - 2026
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ================= CORE JS ================= -->
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/kaiadmin.min.js"></script>
+
+    <!-- Donut Chart -->
+    <script>
+      var ctx = document.getElementById("projectCategoryChart").getContext("2d");
+      var projectCategoryChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["Web Development", "Web Design", "Digital Illustration", "Photography"],
+          datasets: [
+            {
+              data: [2, 1, 2, 2],
+              backgroundColor: ["#1572E8", "#6861CE", "#48ABF7", "#31CE36"],
+              borderWidth: 0,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: "bottom",
+            labels: { fontColor: "#2A2F5B", padding: 15 },
+          },
+          cutoutPercentage: 60,
+        },
+      });
+    </script>
+  </body>
+</html>
